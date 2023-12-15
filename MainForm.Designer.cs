@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MainForm";
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            notifyIcon1 = new NotifyIcon(components);
+            SuspendLayout();
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "RuneScape Discord RPC";
+            notifyIcon1.Visible = true;
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(9, 0);
+            Enabled = false;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Name = "MainForm";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            Text = "MainForm";
+            WindowState = FormWindowState.Minimized;
+            Load += MainForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private NotifyIcon notifyIcon1;
     }
 }
